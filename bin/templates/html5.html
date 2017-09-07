@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>HTML5 fun times</h1>
+    <form action="#" th:action="@{/html5}" th:object="${html5}" method="post">
+    	<p>What's your text? <input type="text" th:field="*{vitB}" /></p>
+
+		<p>It's a radio buttons as list!<br/>
+			<ul>
+				<li th:each="val : ${html5.radioList}">
+					<input type="radio" th:field="*{radioButtonSelection}" th:value="${val.radioValue}" th:text="${val.radioName}"/>
+				</li>
+			</ul>
+		</p>
+<!--
+				
+				<input type="radio" th:field="*{radioButtonSelection}" th:value="#{radioList.radioValue}"/>
+				<label th:for="${#ids.prev('radioButtonSelection')}" th:text="#{radioList.radioName}"/>
+			</li></ul>
+		</p>
+
+		<p>I am confus
+			<table>
+				<tr th:each="var : ${#vars}">
+    				<td th:text="${var.key}"></td>
+    				<td th:text="${var.value}"></td>
+				</tr>
+			</table>
+		</p>
+-->		
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
