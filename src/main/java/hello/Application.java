@@ -8,8 +8,8 @@
  * - Html5examples.java
  * 
  */
+// This is a test commit #4!
 
-// Test edit from master part 2!
 package hello;
 
 import org.springframework.boot.SpringApplication;
