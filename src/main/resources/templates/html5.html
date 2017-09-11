@@ -9,13 +9,19 @@
     <form action="#" th:action="@{/html5}" th:object="${html5}" method="post">
     	<p>What's your text? <input type="text" th:field="*{vitB}" /></p>
 
-		<p>It's a radio buttons as list!<br/>
-			<ul>
-				<li th:each="val : ${html5.radioList}">
-					<input type="radio" th:field="*{radioButtonSelection}" th:value="${val.radioValue}" th:text="${val.radioName}"/>
-				</li>
-			</ul>
-		</p>
+		<table>
+			<tr th:each="val : ${html5.radioList}">
+				<input type="radio" th:field="*{radioButtonSelection}" th:value="${val.radioValue}" th:text="${val.radioName}"/><br/>
+			</tr>
+		</table>
+
+		<table>
+			<tr th:each="val : ${html5.checkList}">
+				<input type="checkbox" th:field="*{checkBoxSelection}" th:value="${val.checkBoxValue}" th:text="${val.CheckBoxName}"/><br/>
+			</tr>
+		</table>
+
+
 <!--
 				
 				<input type="radio" th:field="*{radioButtonSelection}" th:value="#{radioList.radioValue}"/>
