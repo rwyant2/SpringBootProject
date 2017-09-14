@@ -24,8 +24,9 @@ public class Html5Controller {
     	model.addAttribute("html5", new Html5());
     	// the template that is used to present this to the user
     	ArrayList<RadioButton> radioButtons = Html5.buildRadioButtons();
-    	ArrayList<CheckBox> checkBoxes = Html5.buildCheckBoxes();
     	model.addAttribute("radioButtons", radioButtons);
+    	
+    	ArrayList<CheckBox> checkBoxes = Html5.buildCheckBoxes();
     	model.addAttribute("checkBoxes", checkBoxes);
     	return "html5";
     }

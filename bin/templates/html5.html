@@ -17,7 +17,7 @@
 
 		<table>
 			<tr th:each="val : ${html5.checkList}">
-				<input type="checkbox" th:field="*{checkBoxSelection}" th:value="${val.checkBoxValue}" th:text="${val.CheckBoxName}"/><br/>
+				<input type="checkbox" th:field="*{checkBoxSelection}" th:value="${val.checkValue}" th:text="${val.checkName}"/><br/>
 			</tr>
 		</table>
 
