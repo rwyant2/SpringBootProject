@@ -28,6 +28,10 @@ public class Html5Controller {
     	
     	ArrayList<CheckBox> checkBoxes = Html5.buildCheckBoxes();
     	model.addAttribute("checkBoxes", checkBoxes);
+    	
+    	ArrayList<DropDownItem> dropDown = Html5.buildDropDown();
+    	model.addAttribute("dropDown", dropDown);
+    	
     	return "html5";
     }
     
