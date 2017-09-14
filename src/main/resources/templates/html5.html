@@ -20,24 +20,16 @@
 				<input type="checkbox" th:field="*{checkBoxSelection}" th:value="${val.checkValue}" th:text="${val.checkName}"/><br/>
 			</tr>
 		</table>
-
-
+		
+		<select th:field="*{dropDownSelection}">
+  			<option th:each="val : ${html5.dropList}" th:value="${val.dropValue}" th:text="${val.dropName}"></option>
+		</select>
+		
 <!--
-				
-				<input type="radio" th:field="*{radioButtonSelection}" th:value="#{radioList.radioValue}"/>
-				<label th:for="${#ids.prev('radioButtonSelection')}" th:text="#{radioList.radioName}"/>
-			</li></ul>
-		</p>
-
-		<p>I am confus
-			<table>
-				<tr th:each="var : ${#vars}">
-    				<td th:text="${var.key}"></td>
-    				<td th:text="${var.value}"></td>
-				</tr>
-			</table>
-		</p>
--->		
+		<select th:field="*{dropDownSelection}">
+  			<option th:each="val : ${html5.dropList}" th:value="${val.dropValue}" th:text="${val.dropName}"></option>
+		</select>
+-->
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>
 </body>
