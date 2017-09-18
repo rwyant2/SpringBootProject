@@ -7,29 +7,26 @@
 <body>
 	<h1>HTML5 fun times</h1>
     <form action="#" th:action="@{/html5}" th:object="${html5}" method="post">
-    	<p>What's your text? <input type="text" th:field="*{vitB}" /></p>
+    	<p>What's your text? <input type="text" th:field="*{textField}" /></p>
 
-		<table>
+		<p/><table>
 			<tr th:each="val : ${html5.radioList}">
 				<input type="radio" th:field="*{radioButtonSelection}" th:value="${val.radioValue}" th:text="${val.radioName}"/><br/>
 			</tr>
 		</table>
 
-		<table>
+		<p/><table>
 			<tr th:each="val : ${html5.checkList}">
 				<input type="checkbox" th:field="*{checkBoxSelection}" th:value="${val.checkValue}" th:text="${val.checkName}"/><br/>
 			</tr>
 		</table>
 		
-		<select th:field="*{dropDownSelection}">
+		<p/><select th:field="*{dropDownSelection}">
   			<option th:each="val : ${html5.dropList}" th:value="${val.dropValue}" th:text="${val.dropName}"></option>
 		</select>
+
+		<p/><textarea th:field="*{textArea}" rows="3" col="30"/>
 		
-<!--
-		<select th:field="*{dropDownSelection}">
-  			<option th:each="val : ${html5.dropList}" th:value="${val.dropValue}" th:text="${val.dropName}"></option>
-		</select>
--->
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>
 </body>
