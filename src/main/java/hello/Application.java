@@ -1,18 +1,11 @@
-/* 17Aug2017 R Wyant: This came from an example in a SpringBoot tutorial found here:
- * 
- * https://spring.io/guides/gs/serving-web-content/
- * 
- * I'm using this as a basis for future work. The parts I wrote were:
- * 
- * - GreetingController2.java and it's unit test
- * - Html5examples.java
- * 
- */
-
 package hello;
 
+import java.util.Arrays;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Application {
@@ -22,4 +15,17 @@ public class Application {
         System.out.println("If you're reading this, the latest is running.");
     }
 
+    @Bean
+    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+        return args -> {
+
+            System.out.println("Let's inspect the beans provided by Spring Boot:");
+
+            String[] beanNames = ctx.getBeanDefinitionNames();
+            Arrays.sort(beanNames);
+            for (String beanName : beanNames) {
+                System.out.println(beanName);
+            }
+        };
+    }
 }

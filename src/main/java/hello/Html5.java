@@ -1,24 +1,23 @@
 package hello;
 
-import java.util.List;
 import java.util.ArrayList;
-//import org.thymeleaf.engine.springintegration.model;
 
 public class Html5 {
-	private String vitB;
+	private String textField;
     private static ArrayList<RadioButton> radioList = new ArrayList<RadioButton>();
     private String radioButtonSelection; 
     private static ArrayList<CheckBox> checkList = new ArrayList<CheckBox>();
     private String checkBoxSelection;
     private static ArrayList<DropDownItem> dropList = new ArrayList<DropDownItem>();
     private String dropDownSelection;
-       
-    public String getVitB() {
-        return vitB;
+    private String textArea;
+    
+    public String getTextField() {
+        return textField;
     }
 
-    public void setVitB(String vitB) {
-        this.vitB = vitB;
+    public void setTextField(String textField) {
+        this.textField = textField;
     }
 // Radio button stuff
     public String getRadioButtonSelection() {
@@ -34,7 +33,7 @@ public class Html5 {
     }
     
     public void setRadioList(ArrayList<RadioButton> radioList) {
-    	this.radioList = radioList;
+    	Html5.radioList = radioList;
     }
 
     public static ArrayList<RadioButton> buildRadioButtons() {    	
@@ -62,7 +61,7 @@ public class Html5 {
     }
     
     public void setCheckList(ArrayList<CheckBox> checkList) {
-    	this.checkList = checkList;
+    	Html5.checkList = checkList;
     }    
 
     public static ArrayList<CheckBox> buildCheckBoxes() {    	
@@ -90,7 +89,7 @@ public class Html5 {
     }
     
     public void setDropList(ArrayList<DropDownItem> dropList) {
-    	this.dropList = dropList;
+    	Html5.dropList = dropList;
     }    
 
     public static ArrayList<DropDownItem> buildDropDown() {    	
@@ -104,4 +103,13 @@ public class Html5 {
     	dropList.add(drop3);
     	return dropList;
 	}
+
+// text area stuff
+    public String getTextArea() {
+        return textArea;
+    }
+
+    public void setTextArea(String textArea) {
+        this.textArea = textArea;
+    }
 }
