@@ -1,5 +1,6 @@
 package hello;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,8 @@ public class Html5Controller {
     @PostMapping("/html5") // the last part of the URL
     // what model class are we using
     public String html5Submit(@ModelAttribute Html5 html5) {
+        //appCtx = listAppCtx.getApplicationContext();
+        
     	// the template that is used to present this to the user
         return "html5result";
     }

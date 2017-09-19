@@ -1,20 +1,34 @@
 package hello;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ApplicationTest {
 
-//    @Test
-//    public void contextLoads() throws Exception {
+    @Test
+    public void appContextLoads() throws Exception {
+    }
+	
+//    @Bean
+//    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+//        return args -> {
+//
+//            System.out.println("Let's inspect the beans provided by Spring Boot:");
+//
+//            String[] beanNames = ctx.getBeanDefinitionNames();
+//            Arrays.sort(beanNames);
+//            for (String beanName : beanNames) {
+//                System.out.println(beanName);
+//            }
+//        };
 //    }
-
-	@Test
-	public void whoopDeFrikinDo() {
-		System.out.println("Placeholder until I can figure out context defects");
-	}
 }
